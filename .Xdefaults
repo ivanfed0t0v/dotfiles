@@ -1,0 +1,66 @@
+! urxvt
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+URxvt*font:  xft:inconsolata:size=10:antialias=true
+URxvt*depth: 32
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*loginShell: true
+Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 5000
+URxvt*termName: rxvt-unicode
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+
+! Base16 Default Dark
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
+
+*.foreground:   #d8d8d8
+*.background:   #181818
+*.cursorColor:  #d8d8d8
+
+*.color0:       #181818
+*.color1:       #ab4642
+*.color2:       #a1b56c
+*.color3:       #f7ca88
+*.color4:       #7cafc2
+*.color5:       #ba8baf
+*.color6:       #86c1b9
+*.color7:       #d8d8d8
+
+*.color8:       #585858
+*.color9:       #ab4642
+*.color10:      #a1b56c
+*.color11:      #f7ca88
+*.color12:      #7cafc2
+*.color13:      #ba8baf
+*.color14:      #86c1b9
+*.color15:      #f8f8f8
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      #dc9656
+*.color17:      #a16946
+*.color18:      #282828
+*.color19:      #383838
+*.color20:      #b8b8b8
+*.color21:      #e8e8e8
