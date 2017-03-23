@@ -44,6 +44,9 @@ bindsym F4 kill
 # installed.
 bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -fn 'xos4 Terminus-10'" --entry-type=name
 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
