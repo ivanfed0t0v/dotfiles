@@ -73,6 +73,11 @@ bindsym $mod+Shift+Right move right
 #bindsym $mod+Shift+Right move workspace next
 #bindsym $mod+Shift+Left move workspace prev
 
+#screenshots
+bindsym --release Print exec "scrot '/home/john/screenshots/%Y%m%d_%H%M%S.png'"
+bindsym --release Shift+Print exec "scrot -u '/home/john/screenshots/%Y%m%d_%H%M%S.png'"
+bindsym --release $mod+Shift+Print exec "scrot -s '/home/john/screenshots/%Y%m%d_%H%M%S.png'"
+
 # split in horizontal orientation
 bindsym $mod+b split h
 
