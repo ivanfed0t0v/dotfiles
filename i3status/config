@@ -18,7 +18,7 @@ order += "run_watch VPN"
 order += "cpu_usage"
 #order += "cpu_temperature 0"
 order += "wireless wlp3s0"
-order += "ethernet br0"
+order += "ethernet enp0s31f6"
 order += "battery 0"
 order += "volume master"
 #order += "load"
@@ -38,7 +38,7 @@ wireless wlp3s0 {
         format_down = "W: down"
 }
 
-ethernet br0 {
+ethernet enp0s31f6 {
         # if you use %speed, i3status requires root privileges
         # (%speed)
         format_up = "E: %ip"
@@ -47,6 +47,7 @@ ethernet br0 {
 
 battery 0 {
         format = "%status %percentage %remaining"
+        path = "/sys/class/power_supply/BAT1/uevent"
 }
 
 volume master {
