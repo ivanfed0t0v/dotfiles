@@ -14,6 +14,10 @@ URxvt*termName: rxvt-unicode
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End: \033[4~
 
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)

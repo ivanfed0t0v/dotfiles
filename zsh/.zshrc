@@ -95,3 +95,7 @@ DEFAULT_USER=`whoami`
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 eval "$(dircolors /etc/dircolors.conf)"
+
+# Working begin and end
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
