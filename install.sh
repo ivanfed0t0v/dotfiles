@@ -25,3 +25,4 @@ ln -fs $PWD/i3status ~/.config/
 
 # zsh
 ln -fs $PWD/zsh/.zshrc ~/
+ln -fs $PWD/zsh/.zprofile ~/
