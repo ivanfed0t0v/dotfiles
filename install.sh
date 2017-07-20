@@ -11,6 +11,7 @@ ln -fs $PWD/vim/.vimrc ~/
 # X11
 ln -fs $PWD/X11/.xinitrc ~/
 ln -fs $PWD/X11/.Xdefaults ~/
+sudo ln -fs $PWD/X11/30-toutchpad.conf /etc/X11/xorg.conf.d/
 
 # scrpits
 ln -fs $PWD/scripts/.lockscreen.sh ~/
