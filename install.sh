@@ -7,10 +7,12 @@
 
 # vim
 ln -fs $PWD/vim/.vimrc ~/
+ln -fs $PWD/vim/.vim ~/
 
 # X11
 ln -fs $PWD/X11/.xinitrc ~/
 ln -fs $PWD/X11/.Xdefaults ~/
+sudo ln -fs $PWD/X11/dircolors.conf /etc/
 sudo ln -fs $PWD/X11/30-toutchpad.conf /etc/X11/xorg.conf.d/
 
 # scrpits
