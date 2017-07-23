@@ -21,6 +21,7 @@ ln -fs $PWD/scripts/.fehbg ~/
 
 # i3
 ln -fs $PWD/i3 ~/.config/
+mkdir ~/screenshots
 
 # i3status
 ln -fs $PWD/i3status ~/.config/
@@ -28,3 +29,12 @@ ln -fs $PWD/i3status ~/.config/
 # zsh
 ln -fs $PWD/zsh/.zshrc ~/
 ln -fs $PWD/zsh/.zprofile ~/
+
+# systemd
+sudo ln -fs $PWD/systemd/i3lock.service /etc/systemd/system/
+
+# sys
+sudo ln -fs $PWD/sys/99-sysctl.conf /etc/sysctl.d/ # set swappiness to 0
+
+# termite
+ln -fs $PWD/termite ~/.config/
