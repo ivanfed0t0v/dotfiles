@@ -32,6 +32,7 @@ ln -fs $PWD/zsh/.zprofile ~/
 
 # systemd
 sudo ln -fs $PWD/systemd/i3lock.service /etc/systemd/system/
+sudo ln -fs $PWD/systemd/openvpn-reconnect.service /etc/systemd/system
 
 # sys
 sudo ln -fs $PWD/sys/99-sysctl.conf /etc/sysctl.d/ # set swappiness to 0
