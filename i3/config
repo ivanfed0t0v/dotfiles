@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec termite
 
+#bindsym $mod+Shift+b exec "xsel | xsel -b"
+#bindsym $mod+Shift+p exec "xsel -b | xsel"
+
 # kill focused window
 #bindsym $mod+Shift+q kill
 bindsym F4 kill
