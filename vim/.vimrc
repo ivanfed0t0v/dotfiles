@@ -5,10 +5,11 @@ set hidden
 syntax enable                   " Enable syntax highlighting
 
 set number	                " Show line numbers
+set relativenumber              " Show relative line numbers
 "set showbreak=+++               " Wrap-broken line prefix
 "set textwidth=100               " Line wrap (number of cols)
 set showmatch	                " Highlight matching brace
-set visualbell	                " Use visual bell (no beeping)
+"set visualbell	                " Use visual bell (no beeping)
  
 set hlsearch	                " Highlight all search results
 set smartcase	                " Enable smart-case search
@@ -22,6 +23,12 @@ set shiftwidth=2                " Number of auto-indent spaces
 set smartindent                 " Enable smart-indent
 set smarttab	                " Enable smart-tabs
 set softtabstop=2               " Number of spaces per Tab
+
+" Enable folding
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
  
 "# Advanced
 set ruler	                " Show row and column ruler information
