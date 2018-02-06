@@ -50,6 +50,8 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'xos4
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
+for_window [instance="Telegram"] move window to scratchpad, scratchpad show
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
