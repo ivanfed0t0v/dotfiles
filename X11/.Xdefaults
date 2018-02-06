@@ -69,3 +69,5 @@ URxvt.keysym.KP_End: \033[4~
 *.color19:      #383838
 *.color20:      #b8b8b8
 *.color21:      #e8e8e8
+
+Xft.dpi: 96

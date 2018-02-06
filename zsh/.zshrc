@@ -5,15 +5,57 @@ export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/john/.oh-my-zsh
-  export PYTHONPATH=/usr/lib/python3.5/site-packages
+  export PYTHONPATH=/usr/lib/python3.6/site-packages
   export VISUAL=vim
   export EDITOR=vim
   
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-  ZSH_THEME="bira"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=" \uf155%f "
+
+# Prompt
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%K{white}%k"
+
+# OS segment
+POWERLEVEL9K_OS_ICON_BACKGROUND='black'
+POWERLEVEL9K_LINUX_ICON='%F{cyan}\uf300%f'
+
+# Dirs
+POWERLEVEL9K_DIR_HOME_BACKGROUND='green'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='black'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='green'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='black'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='yellow'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='black'
+
+# Time
+POWERLEVEL9K_TIME_FOREGROUND='white'
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uf073 %d.%m.%y}"
+POWERLEVEL9K_TIME_BACKGROUND='black'
+
+# Advanced `vcs` color customization
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='black'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+
+# Context
+POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=true
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='green'
+POWERLEVEL9K_CONTEXT_TEMPLATE="%F{cyan}%n%f"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='black'
+
+# Prompt elements
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context_joined dir)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv vcs time)
+
 #ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -99,3 +141,7 @@ eval "$(dircolors /etc/dircolors.conf)"
 # Working begin and end
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+if [[ -r /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    powerline-daemon -q
+fi
