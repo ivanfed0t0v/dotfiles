@@ -3,10 +3,10 @@ Description=i3lock
 Before=sleep.target
 
 [Service]
-User=john
+User=%I
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/john/.lockscreen.sh
+ExecStart=/usr/local/bin/lockscreen.sh
 
 [Install]
 WantedBy=sleep.target

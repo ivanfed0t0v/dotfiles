@@ -22,7 +22,8 @@ sudo ln -fs $PWD/X11/30-toutchpad.conf /etc/X11/xorg.conf.d/
 sudo ln -fs $PWD/X11/20-intel.conf /etc/X11/xorg.conf.d/
 
 # scrpits
-ln -fs $PWD/scripts/.lockscreen.sh ~/
+ln -fs $PWD/scripts/lockscreen.sh ~/.lockscreen.sh
+sudo cp $PWD/scripts/lockscreen.sh /usr/local/bin
 ln -fs $PWD/scripts/.fehbg ~/
 
 # i3
@@ -37,7 +38,8 @@ ln -fs $PWD/zsh/.zshrc ~/
 ln -fs $PWD/zsh/.zprofile ~/
 
 # systemd
-sudo ln -fs $PWD/systemd/i3lock.service /etc/systemd/system/
+sudo cp $PWD/systemd/i3lock@.service /etc/systemd/system/
+sudo systemctl enable i3lock@$USER.service
 sudo ln -fs $PWD/systemd/openvpn-reconnect.service /etc/systemd/system
 
 # sys
