@@ -59,8 +59,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'gabrielelana/vim-markdown'
 
 call plug#end()
+
+let g:markdown_enable_spell_checking = 0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
