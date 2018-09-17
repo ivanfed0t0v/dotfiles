@@ -3,13 +3,13 @@
 ########### Settings ###########
 
 # Use 'xrandr' to find these
-MONITORS=("DP-1" "HDMI-1" "VGA-1")
+MONITORS=("eDP1" "HDMI1" "VGA-1")
 
 # Check /sys/class/drm for the exact location
 STATUSES=(
-          "$(cat /sys/class/drm/card0-DP-1/status)"
+          "$(cat /sys/class/drm/card0-eDP-1/status)"
           "$(cat /sys/class/drm/card0-HDMI-A-1/status)"
-          "$(cat /sys/class/drm/card0-VGA-1/status)"
+          "$(cat /sys/class/drm/card0-DP-1/status)"
 )
 
 INTERNAL_MONITOR="LVDS-1"

@@ -22,9 +22,8 @@ sudo ln -fs $PWD/X11/30-toutchpad.conf /etc/X11/xorg.conf.d/
 sudo ln -fs $PWD/X11/20-intel.conf /etc/X11/xorg.conf.d/
 
 # scrpits
-ln -fs $PWD/scripts/lockscreen.sh ~/.lockscreen.sh
-sudo cp $PWD/scripts/lockscreen.sh /usr/local/bin
-ln -fs $PWD/scripts/.fehbg ~/
+sudo cp $PWD/bin/lockscreen.sh /usr/local/bin
+ln -fs $PWD/bin/.fehbg ~/
 
 # i3
 ln -fs $PWD/i3 ~/.config/
