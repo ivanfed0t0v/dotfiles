@@ -24,6 +24,7 @@ sudo ln -fs $PWD/X11/20-intel.conf /etc/X11/xorg.conf.d/
 # scrpits
 sudo cp $PWD/bin/lockscreen.sh /usr/local/bin
 ln -fs $PWD/bin/.fehbg ~/
+ln -fs $PWD/bin ~/
 
 # i3
 ln -fs $PWD/i3 ~/.config/
