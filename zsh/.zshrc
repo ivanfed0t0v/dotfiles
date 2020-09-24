@@ -14,7 +14,7 @@ export TERM="xterm-256color"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
@@ -57,8 +57,6 @@ POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='black'
 # Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context_joined dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv vcs time)
-
-#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -137,8 +135,6 @@ DEFAULT_USER=`whoami`
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-eval "$(dircolors /etc/dircolors.conf)"
 
 # Working begin and end
 bindkey "^[[1~" beginning-of-line
