@@ -1,0 +1,23 @@
+{
+    "editor.fontSize": 16,
+    "files.autoSave": "afterDelay",
+    "terminal.external.linuxExec": "alacritty",
+    "terminal.explorerKind": "external",
+    "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
+    "diffEditor.renderSideBySide": false,
+    "editor.fontFamily": "'SauceCodePro Nerd Font','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "markdown.preview.fontSize": 16,
+    "ruby.useLanguageServer": true,
+    "ruby.useBundler": true,
+    "ruby.lint": {
+        "rubocop": {
+            "useBundler": true // enable rubocop via bundler
+        }
+    },
+    "solargraph.diagnostics": true,
+    "workbench.activityBar.visible": true,
+    "vim.useSystemClipboard": true,
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.preferredDarkColorTheme": "Solarized Dark",
+    "workbench.preferredLightColorTheme": "Solarized Light"
+}
