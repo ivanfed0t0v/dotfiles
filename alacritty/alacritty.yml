@@ -101,20 +101,17 @@ font:
   # Bold font face
   bold:
     family: SauceCodePro Nerd Font
-    style: Regular
-    #style: Bold
+    style: Bold
 
   # Italic font face
   italic:
     family: SauceCodePro Nerd Font
-    style: Regular
-    #style: Italic
+    style: Italic
 
   # Bold italic font face
   bold_italic:
     family: SauceCodePro Nerd Font
-    style: Regular
-    #style: Bold Italic
+    style: Bold Italic
 
 
   # Offset is the extra space around each character. `offset.y` can be thought of
