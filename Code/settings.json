@@ -19,5 +19,7 @@
     "vim.useSystemClipboard": true,
     "workbench.colorTheme": "Solarized Dark",
     "workbench.preferredDarkColorTheme": "Solarized Dark",
-    "workbench.preferredLightColorTheme": "Solarized Light"
+    "workbench.preferredLightColorTheme": "Solarized Light",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false
 }
