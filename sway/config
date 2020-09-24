@@ -14,35 +14,37 @@
 
     # Your preferred application launcher
     # Note: it's recommended that you pass the final command to sway
-    set $menu rofi -show drun
+    set $menu wofi --show drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     floating_modifier $mod normal
 
     # Workspaces
-    set $ws1   1:
-    set $ws2   2:
-    set $ws3   3:3
-    set $ws4   4:4
-    set $ws5   5:5
-    set $ws6   6:6
-    set $ws7   7:7
-    set $ws8   8:8
-    set $ws9   9:9
-    set $ws0   10:10
-    set $wsF1  11:
-    set $wsF2  12:
-    set $wsF3  13:13
-    set $wsF4  14:14
-    set $wsF5  15:15
-    set $wsF6  16:16
-    set $wsF7  17:17
-    set $wsF8  18:
-    set $wsF9  19:19
-    set $wsF10 20:20
-    set $wsF11 21:
-    set $wsF12 22:
+    set $ws1   01:
+    set $ws2   02:﬏
+    set $ws3   03:
+    set $ws4   04
+    set $ws5   05
+    set $ws6   06
+    set $ws7   07
+    set $ws8   08
+    set $ws9   09
+    set $ws0   10
+    set $wsF1  11:
+    set $wsF2  12
+    set $wsF3  13
+    set $wsF4  14
+    set $wsF5  15
+    set $wsF6  16
+    set $wsF7  17
+    set $wsF8  18
+    set $wsF9  19
+    set $wsF10 20
+    set $wsF11 22
+    set $wsF12 22:
+
+    
 
 ### Font
 
