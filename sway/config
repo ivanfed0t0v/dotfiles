@@ -1,0 +1,276 @@
+### Variables
+
+    # Use Mod1 for Alt, Mod4 for Super
+    set $mod Mod4
+
+    # Home row direction keys, like vim
+    set $left h
+    set $down j
+    set $up k
+    set $right l
+
+    # Your preferred terminal emulator
+    set $term alacritty
+
+    # Your preferred application launcher
+    # Note: it's recommended that you pass the final command to sway
+    set $menu rofi -show drun
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    floating_modifier $mod normal
+
+    # Workspaces
+    set $ws1   1:
+    set $ws2   2:
+    set $ws3   3:3
+    set $ws4   4:4
+    set $ws5   5:5
+    set $ws6   6:6
+    set $ws7   7:7
+    set $ws8   8:8
+    set $ws9   9:9
+    set $ws0   10:10
+    set $wsF1  11:
+    set $wsF2  12:
+    set $wsF3  13:13
+    set $wsF4  14:14
+    set $wsF5  15:15
+    set $wsF6  16:16
+    set $wsF7  17:17
+    set $wsF8  18:
+    set $wsF9  19:19
+    set $wsF10 20:20
+    set $wsF11 21:
+    set $wsF12 22:
+
+### Font
+
+    font pango:Sans 12
+
+### Idle configuration
+
+    exec swayidle -w \
+            timeout 600 'swaymsg "output * dpms off"' \
+                resume 'swaymsg "output * dpms on"' \
+            timeout 900 'swaylock -f -c 000000' \
+            before-sleep 'swaylock -f -c 000000'
+
+    # This will lock your screen after 300 seconds of inactivity, then turn off
+    # your displays after another 300 seconds, and turn your screens back on when
+    # resumed. It will also lock your screen before your computer goes to sleep.
+
+### Key bindings
+
+    bindsym --to-code {
+        # Start a terminal
+            $mod+Return exec $term
+
+        # Kill focused window
+            shift+f4 kill
+
+        # Start your launcher
+            $mod+d exec $menu
+
+        # Reload the configuration file
+            $mod+Shift+c reload
+
+        # Exit sway (logs you out of your Wayland session)
+            $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+        # Move your focus around
+            $mod+$left focus left
+            $mod+$down focus down
+            $mod+$up focus up
+            $mod+$right focus right
+
+        # Ditto, with arrow keys
+            $mod+Left focus left
+            $mod+Down focus down
+            $mod+Up focus up
+            $mod+Right focus right
+
+        # Move the focused window with the same, but add Shift
+            $mod+Shift+$left move left
+            $mod+Shift+$down move down
+            $mod+Shift+$up move up
+            $mod+Shift+$right move right
+        
+        # Ditto, with arrow keys
+            $mod+Shift+Left move left
+            $mod+Shift+Down move down
+            $mod+Shift+Up move up
+            $mod+Shift+Right move right
+
+        # Audio
+            XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+            XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+            XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+            XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+            XF86MonBrightnessDown exec brightnessctl set 5%-
+            XF86MonBrightnessUp exec brightnessctl set +5%
+
+        # Switch to workspace
+            $mod+1   workspace $ws1
+            $mod+2   workspace $ws2
+            $mod+3   workspace $ws3
+            $mod+4   workspace $ws4
+            $mod+5   workspace $ws5
+            $mod+6   workspace $ws6
+            $mod+7   workspace $ws7
+            $mod+8   workspace $ws8
+            $mod+9   workspace $ws9
+            $mod+0   workspace $ws0
+            $mod+F1  workspace $wsF1
+            $mod+F2  workspace $wsF2
+            $mod+F3  workspace $wsF3
+            $mod+F4  workspace $wsF4
+            $mod+F5  workspace $wsF5
+            $mod+F6  workspace $wsF6
+            $mod+F7  workspace $wsF7
+            $mod+F8  workspace $wsF8
+            $mod+F9  workspace $wsF9
+            $mod+F10 workspace $wsF10
+            $mod+F11 workspace $wsF11
+            $mod+F12 workspace $wsF12
+
+        # Move focused container to workspace
+            $mod+Shift+1    move container to workspace $ws1
+            $mod+Shift+2    move container to workspace $ws2
+            $mod+Shift+3    move container to workspace $ws3
+            $mod+Shift+4    move container to workspace $ws4
+            $mod+Shift+5    move container to workspace $ws5
+            $mod+Shift+6    move container to workspace $ws6
+            $mod+Shift+7    move container to workspace $ws7
+            $mod+Shift+8    move container to workspace $ws8
+            $mod+Shift+9    move container to workspace $ws9
+            $mod+Shift+0    move container to workspace $ws0
+            $mod+Shift+F1   move container to workspace $wsF1
+            $mod+Shift+F2   move container to workspace $wsF2
+            $mod+Shift+F3   move container to workspace $wsF3
+            $mod+Shift+F4   move container to workspace $wsF4
+            $mod+Shift+F5   move container to workspace $wsF5
+            $mod+Shift+F6   move container to workspace $wsF6
+            $mod+Shift+F7   move container to workspace $wsF7
+            $mod+Shift+F8   move container to workspace $wsF8
+            $mod+Shift+F9   move container to workspace $wsF9
+            $mod+Shift+F10  move container to workspace $wsF10
+            $mod+Shift+F11  move container to workspace $wsF11
+            $mod+Shift+F12  move container to workspace $wsF12
+
+        # Layout stuff:
+            # You can "split" the current object of your focus with
+            # $mod+b or $mod+v, for horizontal and vertical splits
+            # respectively.
+            $mod+b splith
+            $mod+v splitv
+
+            # Switch the current container between different layout styles
+            $mod+s layout stacking
+            $mod+w layout tabbed
+            $mod+e layout toggle split
+
+            # Make the current focus fullscreen
+            $mod+f fullscreen
+
+            # Toggle the current focus between tiling and floating mode
+            $mod+Shift+space floating toggle
+
+            # Swap focus between the tiling area and the floating area
+            $mod+space focus mode_toggle
+
+            # Move focus to the parent container
+            $mod+a focus parent
+
+        # Scratchpad:
+            # Sway has a "scratchpad", which is a bag of holding for windows.
+            # You can send windows there and get them back later.
+
+            # Move the currently focused window to the scratchpad
+                $mod+Shift+minus move scratchpad
+
+            # Show the next scratchpad window or hide the focused scratchpad window.
+            # If there are multiple scratchpad windows, this command cycles through them.
+                $mod+minus scratchpad show
+        # Screenshots
+            Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+            shift+Print exec grim -g "$(slurp)" -t png /tmp/scrn-$(date +"%Y-%m-%d-%H-%M-%S").png
+
+    }
+
+
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    swaybar_command waybar
+    #position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    #colors {
+        #statusline #ffffff
+        #background #323232
+        #inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
+}
+
+### Input configuration
+
+    input * {
+        xkb_layout us,ru
+        xkb_variant nodeadkeys
+        xkb_options grp:alt_shift_toggle
+    }
+
+### Output configuration
+
+    output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+
+### Misc options
+
+    workspace_auto_back_and_forth yes
+    hide_edge_borders both
+
+for_window [app_id="firefox"] inhibit_idle fullscreen
+for_window [class="vlc"] inhibit_idle fullscreen
+for_window [class="Google-chrome"] inhibit_idle fullscreen
+
+### Autostart
+
+    exec udiskie
+    exec mako
+
+### Includes
+
+    include ~/.config/sway/$(hostname)/*
+    include /etc/sway/config.d/*
