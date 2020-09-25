@@ -32,6 +32,11 @@ vscode: ## Install config for Visual Studio Code
 	@echo Installing config for Visual Studio Code
 	ln -fs $(PWD)/Code/settings.json ~/.config/Code/User/
 
+waybar: ## Install config for Waybar
+	@echo Installing config for Waybar
+	rm -rf ~/.config/waybar
+	ln -s $(PWD)/waybar ~/.config/
+
 zsh: ## Install config for ZSH
 	@echo Installing .zshrc and oh-my-zsh
 	sh -c "`curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`"
@@ -39,7 +44,7 @@ zsh: ## Install config for ZSH
 	ln -fs $(PWD)/zsh/.zshrc ~/.zshrc
 	rm ~/.zshrc.pre-oh-my-zsh
 
-.PHONY: help fonts alacritty sway termite vscode zsh
+.PHONY: help alacritty desktop fonts sway termite vscode waybar zsh
 
 help: ## Show help topics
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
