@@ -1,15 +1,22 @@
 default: help
 
+alacritty: ## Install config for Alacritty term
+	@echo Installing config for Alacritty
+	rm -rf ~/.config/alacritty
+	ln -s $(PWD)/alacritty ~/.config/
+
+desktop:
+	@echo Installing .desktop files to run wayland apps
+	mkdir -p ~/.local/share/applications
+	ln -sf $(PWD)/desktop/firefox-wl.desktop ~/.local/share/applications
+	ln -sf $(PWD)/desktop/telegramdesktop-wl.desktop ~/.local/share/applications
+
 fonts: ## Install beautiful fonts for the user
 	@echo Installing fonts
 	mkdir -p ~/.local/share/fonts
 	curl -fLo /tmp/font.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/SourceCodePro.zip
 	unzip -o /tmp/font.zip -d ~/.local/share/fonts
 	fc-cache -vf ~/.local/share/fonts
-
-alacritty: ## Install config for Alacritty term
-	@echo Installing config for Alacritty
-	ln -fs $(PWD)/alacritty ~/.config/
 
 sway: ## Install config for Sway
 	@echo Installing config for Sway
