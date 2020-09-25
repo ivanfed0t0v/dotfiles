@@ -20,19 +20,24 @@ fonts: ## Install beautiful fonts for the user
 
 sway: ## Install config for Sway
 	@echo Installing config for Sway
-	ln -fs $(PWD)/sway ~/.config/
+	rm -rf ~/.config/sway
+	ln -s $(PWD)/sway ~/.config/
 
 termite:
 	@echo Installing config for Termite
-	ln -fs $PWD/termite ~/.config/
+	rm -rf ~/.config/termite
+	ln -s $(PWD)/termite ~/.config/
 
 vscode: ## Install config for Visual Studio Code
 	@echo Installing config for Visual Studio Code
 	ln -fs $(PWD)/Code/settings.json ~/.config/Code/User/
 
 zsh: ## Install config for ZSH
-	@echo Installing .zshrc
-	ln -fs $PWD/zsh/.zshrc ~/
+	@echo Installing .zshrc and oh-my-zsh
+	sh -c "`curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh`"
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+	ln -fs $(PWD)/zsh/.zshrc ~/.zshrc
+	rm ~/.zshrc.pre-oh-my-zsh
 
 .PHONY: help fonts alacritty sway termite vscode zsh
 
